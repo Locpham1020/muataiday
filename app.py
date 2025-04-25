@@ -5,10 +5,14 @@ from api.export import export_bp
 
 app = Flask(__name__)
 
-# Register Blueprints
+# Đăng ký các Blueprint
 app.register_blueprint(click_bp, url_prefix="/api/click")
 app.register_blueprint(order_bp, url_prefix="/api/order")
 app.register_blueprint(export_bp, url_prefix="/api/export")
 
+@app.route("/")
+def index():
+    return "Tracking API for muataiday.store is running."
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
