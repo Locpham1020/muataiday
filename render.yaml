@@ -1,12 +1,11 @@
 services:
   - type: web
-    name: muataiday-api
+    name: muataiday
     env: python
-    plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
+    startCommand: "gunicorn app:app"
     envVars:
       - key: AIRTABLE_TOKEN
-        value: pattX8bLWJkVxzgbU.a8f7fb18557c8fa8e7acd32f5b98f679f7cfdd1e82063b239ba792d5d68c6c4c
+        value: pattX8bLWJkVxzgbU.a8f7fb... (token của bạn)
       - key: AIRTABLE_BASE_ID
         value: appjGANHrvvnrIObr
